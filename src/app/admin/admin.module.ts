@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin.routing';
 import { AdminLayoutComponent } from './layouts/default/admin-layout.component';
 import { AdminHomePageComponent } from './pages/home/admin-home-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { AdminHomePageComponent } from './pages/home/admin-home-page.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    SharedModule,
   ]
 })
 export class AdminModule { }
