@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+app-root {
+  display: block;
+}
+
+body {
+  font-family: 'STC-Forward-Regular', sans-serif;
+}
+
+main {
+  flex: auto;
+}

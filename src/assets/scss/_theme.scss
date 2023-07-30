@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+
+// Create custom theming
+@import "/node_modules/@angular/material/_theming.scss";
+@include mat-core();
+
+// Variables
+@import './variables/palettes';
+@import './variables/typography';
+
+$app-theme-light: mat.define-light-theme((
+  color: (
+    primary: mat-palette($mat-primary, 500),
+    accent: mat-palette($mat-accent, 500),
+    warn: mat-palette($mat-red, 500),
+  ),
+  typography: $mat-typography,
+));
+
+.theme-light {
+  @include angular-material-theme($app-theme-light);
+}
+
+.theme-light {
+  &.mat-app-background {
+    background-color: #f1f2f3;
+  }
+}
