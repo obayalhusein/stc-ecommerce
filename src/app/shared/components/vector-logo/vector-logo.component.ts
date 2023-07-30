@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'vector-logo',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vector-logo.component.scss']
 })
 export class VectorLogoComponent implements OnInit {
+  @Input() width: number = 80;
+  height: number = this.width / 2;
 
   constructor() { }
 
   ngOnInit() {
+    this.height = this.width / 2;
   }
-
 }

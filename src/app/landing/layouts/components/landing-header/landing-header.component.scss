@@ -1,0 +1,19 @@
+.header-title {
+  margin-left: 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 599px) {
+  .spacer {
+    display: none;
+  }
+
+  div[fxHide] {
+    display: none;
+  }
+}
