@@ -1,0 +1,7 @@
+.bg-primary {
+  background-color: map-get($mat-primary, 500);
+}
+
+.bg-accent {
+  background-color: map-get($mat-accent, 500);
+}

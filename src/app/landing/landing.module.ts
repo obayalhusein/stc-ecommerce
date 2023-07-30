@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingRoutingModule } from './landing.routing';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Layouts
 import { LandingLayoutComponent } from './layouts/default/landing-layout.component';
@@ -15,6 +16,7 @@ import { LandingHomePageComponent } from './pages/home/landing-home-page.compone
 // Components
 import { LandingFooterComponent } from './layouts/components/landing-footer/landing-footer.component';
 import { LandingHeaderComponent } from './layouts/components/landing-header/landing-header.component';
+import { ProductsGridListComponent } from './components/products-grid-list/products-grid-list.component';
 
 
 @NgModule({
@@ -26,11 +28,13 @@ import { LandingHeaderComponent } from './layouts/components/landing-header/land
     AuthLayoutComponent,
     LandingHeaderComponent,
     LandingFooterComponent,
+    ProductsGridListComponent,
   ],
   imports: [
     CommonModule,
     LandingRoutingModule,
     SharedModule,
+    HttpClientModule,
   ]
 })
 export class LandingModule { }
