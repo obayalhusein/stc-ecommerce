@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./vector-logo.component.scss']
 })
 export class VectorLogoComponent implements OnInit {
+  @Input() color: string = '#4f008c';
   @Input() width: number = 80;
   height: number = this.width / 2;
 

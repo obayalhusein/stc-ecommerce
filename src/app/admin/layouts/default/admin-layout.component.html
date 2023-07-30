@@ -1,7 +1,33 @@
-<header>admin header</header>
+<mat-toolbar color="primary">
+  <button (click)="drawerOpen = !drawerOpen" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <vector-logo color="white" />
+  <span class="mx-auto"></span>
+  <span>test@test.com</span>
+  <button mat-icon-button>
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
 
-<main>
-  <router-outlet></router-outlet>
-</main>
-
-<footer>admin footer</footer>
+<div class="bg-gray-100 flex h-full">
+  <aside class="bg-white">
+    <mat-list>
+      <a routerLink="/admin" mat-list-item>
+        <mat-icon color="primary" matListItemIcon>home</mat-icon>
+        <div *ngIf="drawerOpen" class="pe-3" matListItemTitle>Overview</div>
+      </a>
+      <a routerLink="/admin/categories" mat-list-item>
+        <mat-icon color="primary" matListItemIcon>folder</mat-icon>
+        <div *ngIf="drawerOpen" class="pe-3" matListItemTitle>Categories</div>
+      </a>
+      <a routerLink="/admin/products" mat-list-item>
+        <mat-icon color="primary" matListItemIcon>shopping_cart</mat-icon>
+        <div *ngIf="drawerOpen" class="pe-3" matListItemTitle>Products</div>
+      </a>
+    </mat-list>
+  </aside>
+  <main class="p-5">
+    <router-outlet></router-outlet>
+  </main>
+</div>
