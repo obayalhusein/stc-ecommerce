@@ -5,11 +5,19 @@ import { VectorLogoComponent } from './components/vector-logo/vector-logo.compon
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 const MatAngularModules = [
   MatToolbarModule,
   MatIconModule,
   MatSidenavModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
 ];
 
 @NgModule({

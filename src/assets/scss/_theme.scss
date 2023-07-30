@@ -25,4 +25,7 @@ $app-theme-light: mat.define-light-theme((
   &.mat-app-background {
     background-color: #f1f2f3;
   }
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch {
+    border-right: transparent;
+  }
 }
