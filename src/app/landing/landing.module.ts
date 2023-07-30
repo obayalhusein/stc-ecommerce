@@ -17,6 +17,7 @@ import { LandingHomePageComponent } from './pages/home/landing-home-page.compone
 import { LandingFooterComponent } from './layouts/components/landing-footer/landing-footer.component';
 import { LandingHeaderComponent } from './layouts/components/landing-header/landing-header.component';
 import { ProductsGridListComponent } from './components/products-grid-list/products-grid-list.component';
+import { ProductCardItemComponent } from './components/product-card-item/product-card-item.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProductsGridListComponent } from './components/products-grid-list/produ
     LandingHeaderComponent,
     LandingFooterComponent,
     ProductsGridListComponent,
+    ProductCardItemComponent,
   ],
   imports: [
     CommonModule,

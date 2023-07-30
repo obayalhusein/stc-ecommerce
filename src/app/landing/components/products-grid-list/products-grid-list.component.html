@@ -1,34 +1,5 @@
 <div class="px-5">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-    <a routerLink="/" *ngFor="let product of productsList">
-      <div class="transform transition duration-300 hover:scale-105">
-        <div class="relative aspect-square bg-gray-100 rounded overflow-hidden">
-          <img class="absolute w-full h-full object-cover" mat-card-image [src]="baseUrl + product.attributes.preview.data[0].attributes.url" [alt]="product.attributes.title">
-          <div *ngIf="product.attributes.discount" class="absolute bg-accent text-white text-sm font-bold m-3 px-3 py-1 rounded">SALE</div>
-        </div>
-
-        <div class="p-3">
-          <!-- <mat-card-subtitle>{{ product.attributes.category.data.attributes.title }}</mat-card-subtitle> -->
-          <div class="flex justify-between">
-            <div>
-              <p class="text-sm mb-2">{{ product.attributes.title }}</p>
-              <ng-container *ngIf="product.attributes.discount; else elseTemplate">
-                <div class="flex">
-                  <p class="text-lg font-bold me-2">{{ product.attributes.price - product.attributes.price * product.attributes.discount / 100 }} SAR</p>
-                  <p class="text-sm line-through text-gray-500">{{ product.attributes.price }} SAR</p>
-                </div>
-              </ng-container>
-              <ng-template #elseTemplate>
-                <p class="text-lg font-bold">{{ product.attributes.price }} SAR</p>
-              </ng-template>
-            </div>
-            <button color="primary" mat-fab>
-              <mat-icon>add_shopping_cart</mat-icon>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </a>
+    <product-card-item *ngFor="let product of productsList" [item]="product" />
   </div>
 </div>

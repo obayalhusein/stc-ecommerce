@@ -1,4 +1,3 @@
-import { environment } from 'src/enviremonets';
 import { PublicProductsService } from './../../services/public-products.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-grid-list.component.scss']
 })
 export class ProductsGridListComponent implements OnInit {
-  baseUrl: String = environment.baseUrl;
   productsList: Array<any> = [];
 
   constructor(private _publicProductsService: PublicProductsService) { }

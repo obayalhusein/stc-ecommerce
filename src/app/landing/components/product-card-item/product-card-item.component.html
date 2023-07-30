@@ -1,0 +1,28 @@
+<a routerLink="/">
+  <div class="transform transition duration-300 hover:scale-105">
+    <div class="relative aspect-square bg-gray-100 rounded overflow-hidden">
+      <img class="absolute w-full h-full object-cover" mat-card-image [src]="baseUrl + item.attributes.preview.data[0].attributes.url" [alt]="item.attributes.title">
+      <div *ngIf="item.attributes.discount" class="absolute bg-accent text-white text-sm font-bold m-3 px-3 py-1 rounded">SALE</div>
+    </div>
+
+    <div class="p-3">
+      <div class="flex justify-between">
+        <div>
+          <p class="text-sm mb-2">{{ item.attributes.title }}</p>
+          <ng-container *ngIf="item.attributes.discount; else elseTemplate">
+            <div class="flex">
+              <p class="text-lg font-bold me-2">{{ item.attributes.price - item.attributes.price * item.attributes.discount / 100 }} SAR</p>
+              <p class="text-sm line-through text-gray-500">{{ item.attributes.price }} SAR</p>
+            </div>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <p class="text-lg font-bold">{{ item.attributes.price }} SAR</p>
+          </ng-template>
+        </div>
+        <button color="primary" mat-fab>
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</a>
