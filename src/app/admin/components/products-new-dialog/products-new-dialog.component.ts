@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AdminProductsService } from '../../services/admin-products.service';
 import { AdminCategoriesService } from '../../services/admin-categories.service';
-import { AdminUploadService } from '../../services/admin-upload.service';
 
 @Component({
   selector: 'app-products-new-dialog',
@@ -23,7 +22,7 @@ export class ProductsNewDialogComponent implements OnInit {
     discount: 0
   };
 
-  constructor(private _dialogRef: MatDialogRef<ProductsNewDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private _adminProductsService: AdminProductsService, private _adminCategoriesService: AdminCategoriesService, private _adminUploadService: AdminUploadService) { }
+  constructor(private _dialogRef: MatDialogRef<ProductsNewDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private _adminProductsService: AdminProductsService, private _adminCategoriesService: AdminCategoriesService) { }
 
   ngOnInit() {
     this.fetchCategoriesData();

@@ -5,8 +5,8 @@
     <mat-card-content>
       <div class="flex justify-between items-center">
         <div>
-          <div class="mb-1">Products</div>
-          <div class="text-3xl font-bold mb-2">999</div>
+          <div class="mb-1">Categories</div>
+          <div class="text-3xl font-bold mb-2">{{ categoriesCount }}</div>
           <a routerLink="/admin">Show details</a>
         </div>
         <div class="flex items-center justify-center bg-violet-100 w-20 h-20 rounded-full">
@@ -19,8 +19,8 @@
     <mat-card-content>
       <div class="flex justify-between items-center">
         <div>
-          <div class="mb-1">Categories</div>
-          <div class="text-3xl font-bold mb-2">999</div>
+          <div class="mb-1">Products</div>
+          <div class="text-3xl font-bold mb-2">{{ productsCount }}</div>
           <a routerLink="/admin">Show details</a>
         </div>
         <div class="flex items-center justify-center bg-violet-100 w-20 h-20 rounded-full">
@@ -34,7 +34,7 @@
       <div class="flex justify-between items-center">
         <div>
           <div class="mb-1">Orders</div>
-          <div class="text-3xl font-bold mb-2">999</div>
+          <div class="text-3xl font-bold mb-2">{{ ordersCount }}</div>
           <a routerLink="/admin">Show details</a>
         </div>
         <div class="flex items-center justify-center bg-violet-100 w-20 h-20 rounded-full">
