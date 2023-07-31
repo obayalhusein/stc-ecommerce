@@ -5,6 +5,7 @@ import {MatTableDataSource } from '@angular/material/table';
 import { AdminProductsService } from '../../services/admin-products.service';
 import { ProductsDeleteDialogComponent } from '../products-delete-dialog/products-delete-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ProductsEditDialogComponent } from '../products-edit-dialog/products-edit-dialog.component';
 
 @Component({
   selector: 'products-table',
@@ -42,6 +43,20 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
     }
   }
 
+  showEditProductDialog(product: any) {
+    const data = {
+      product
+    };
+
+    const dialogRef = this.dialog.open(ProductsEditDialogComponent, {data} );
+
+    dialogRef.afterClosed().subscribe((data: any) => {
+      if (data?.isSubmitted) {
+        this.dataChanged.emit();
+      }
+    });
+  }
+
   showDeleteProductDialog(product: any) {
     const data = {
       product
@@ -50,7 +65,7 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
     const dialogRef = this.dialog.open(ProductsDeleteDialogComponent, {data} );
 
     dialogRef.afterClosed().subscribe((data: any) => {
-      if (data.isSubmitted) {
+      if (data?.isSubmitted) {
         this.dataChanged.emit();
       }
     });

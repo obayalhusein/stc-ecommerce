@@ -28,4 +28,10 @@ export class AdminProductsService {
     return this.http.post<any>(url, payload);
   }
 
+  updateProductApi(payload: any, productId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/products/${productId}`;
+
+    return this.http.put<any>(url, payload);
+  }
+
 }

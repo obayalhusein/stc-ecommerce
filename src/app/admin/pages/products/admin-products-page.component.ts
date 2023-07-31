@@ -36,7 +36,7 @@ export class AdminProductsPageComponent implements OnInit {
     const dialogRef = this.dialog.open(ProductsNewDialogComponent, {} );
 
     dialogRef.afterClosed().subscribe((data: any) => {
-      if (data.isSubmitted) {
+      if (data?.isSubmitted) {
         this.fetchProductsData();
       }
     });

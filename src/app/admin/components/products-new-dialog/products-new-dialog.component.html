@@ -2,7 +2,7 @@
   <div class="text-xl" mat-dialog-title>New Product</div>
 
   <mat-dialog-content>
-    <div class="md:flex">
+    <div class="md:flex pt-3">
       <div>
         <label>
           <input type="file" class="hidden" (change)="onFilesSelected($event)" name="preview" multiple required />
@@ -63,7 +63,7 @@
           <div>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Discount %</mat-label>
-              <input [(ngModel)]="formData.discount" name="discount" type="number" min="0" matInput required>
+              <input [(ngModel)]="formData.discount" name="discount" type="number" min="0" max="100" matInput required>
             </mat-form-field>
           </div>
         </div>
