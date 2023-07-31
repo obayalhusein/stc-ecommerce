@@ -56,6 +56,8 @@ export class ProductsNewDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.isSubmitting = true;
+    
     const data = new FormData();
     data.append('data', JSON.stringify(this.formData));
     for (const file of this.formData.preview) {

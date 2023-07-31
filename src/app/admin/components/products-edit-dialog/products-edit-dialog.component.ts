@@ -69,6 +69,8 @@ export class ProductsEditDialogComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.isSubmitting = true;
+    
     const data = new FormData();
     data.append('data', JSON.stringify(this.formData));
     if(this.formData.preview.length) {

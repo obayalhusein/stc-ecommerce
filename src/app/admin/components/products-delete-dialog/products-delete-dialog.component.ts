@@ -15,7 +15,9 @@ export class ProductsDeleteDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitAction() {
+  onSubmit(): void {
+    this.isSubmitting = true;
+
     this._adminProductsService.deleteProductByIdApi(this.data.product.id).subscribe({
       next: (result) => {
         this._dialogRef.close({ isSubmitted: true });
