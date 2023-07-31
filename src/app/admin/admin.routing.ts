@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/default/admin-layout.component';
 import { AdminHomePageComponent } from './pages/home/admin-home-page.component';
-import { AdminCategoriesPageComponent } from './pages/admin-categories-page/admin-categories-page.component';
-import { AdminProductsPageComponent } from './pages/admin-products-page/admin-products-page.component';
-import { AdminOrdersPageComponent } from './pages/admin-orders-page/admin-orders-page.component';
+import { AdminCategoriesPageComponent } from './pages/categories/admin-categories-page.component';
+import { AdminProductsPageComponent } from './pages/products/admin-products-page.component';
+import { AdminOrdersPageComponent } from './pages/orders/admin-orders-page.component';
 
 const routes: Routes = [
   {
