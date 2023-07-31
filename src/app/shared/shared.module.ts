@@ -10,6 +10,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 const MatAngularModules = [
   MatToolbarModule,
@@ -20,6 +25,10 @@ const MatAngularModules = [
   MatInputModule,
   MatButtonModule,
   MatListModule,
+  MatSortModule,
+  MatTableModule,
+  MatMenuModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({
