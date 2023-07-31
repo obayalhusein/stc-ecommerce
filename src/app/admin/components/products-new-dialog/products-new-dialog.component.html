@@ -43,27 +43,27 @@
         <div>
           <mat-form-field appearance="outline" class="w-full">
             <mat-label>Description</mat-label>
-            <textarea [(ngModel)]="formData.description" name="description" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" required></textarea>
+            <textarea [(ngModel)]="formData.description" name="description" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
           </mat-form-field>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Quantity</mat-label>
-              <input [(ngModel)]="formData.quantity" name="quantity" type="number" matInput required>
+              <mat-label>Quantity (items)</mat-label>
+              <input [(ngModel)]="formData.quantity" name="quantity" type="number" min="0" matInput required>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Price</mat-label>
-              <input [(ngModel)]="formData.price" name="price" type="number" matInput required>
+              <mat-label>Price (SAR)</mat-label>
+              <input [(ngModel)]="formData.price" name="price" type="number" min="0" matInput required>
             </mat-form-field>
           </div>
           <div>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Discount</mat-label>
-              <input [(ngModel)]="formData.discount" name="discount" type="number" matInput required>
+              <mat-label>Discount %</mat-label>
+              <input [(ngModel)]="formData.discount" name="discount" type="number" min="0" matInput required>
             </mat-form-field>
           </div>
         </div>
