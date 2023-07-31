@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { VectorLogoComponent } from './components/vector-logo/vector-logo.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -15,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 
 const MatAngularModules = [
@@ -31,6 +34,7 @@ const MatAngularModules = [
   MatMenuModule,
   MatProgressSpinnerModule,
   MatDialogModule,
+  MatSelectModule,
 ];
 
 @NgModule({
@@ -39,9 +43,13 @@ const MatAngularModules = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    HttpClientModule,
     MatAngularModules,
   ],
   exports: [
+    FormsModule,
+    HttpClientModule,
     VectorLogoComponent,
     MatAngularModules,
   ],

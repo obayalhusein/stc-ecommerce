@@ -21,4 +21,11 @@ export class AdminProductsService {
 
     return this.http.delete(url);
   }
+
+  postProductApi(payload: any): Observable<any> {
+    let url = `${environment.baseUrl}/api/products`;
+
+    return this.http.post<any>(url, payload);
+  }
+
 }

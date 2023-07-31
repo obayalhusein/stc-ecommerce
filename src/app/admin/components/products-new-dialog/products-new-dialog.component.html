@@ -1,10 +1,78 @@
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="text-xl" mat-dialog-title>New Product</div>
 
   <mat-dialog-content>
-    <p>
-      products-new-dialog works!
-    </p>
+
+    <div class="md:flex">
+      <div>
+        <label>
+          <input type="file" class="hidden" (change)="onFilesSelected($event)" name="preview" multiple required />
+          <div class="flex flex-col items-center justify-center md:aspect-video text-center border-dashed border-2 border-purple-500 mx-2 md:me-5 mb-5 px-3 py-5">
+            <mat-icon color="primary" class="mb-3">image</mat-icon>
+            <div>Upload preview images</div>
+          </div>
+        </label>
+
+
+        <div *ngIf="selectedImages.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-2 mx-2 md:me-5">
+          <div *ngFor="let image of selectedImages" class="relative aspect-square bg-gray-100 border-solid border-2 border-gray-200 rounded overflow-hidden">
+            <img class="absolute w-full h-full object-cover" mat-card-image [src]="image">
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Title</mat-label>
+              <input [(ngModel)]="formData.title" name="title" matInput required>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Category</mat-label>
+              <mat-select [(ngModel)]="formData.category" name="category" required>
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.attributes.title}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="w-full">
+            <mat-label>Description</mat-label>
+            <textarea [(ngModel)]="formData.description" name="description" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" required></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Quantity</mat-label>
+              <input [(ngModel)]="formData.quantity" name="quantity" type="number" matInput required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Price</mat-label>
+              <input [(ngModel)]="formData.price" name="price" type="number" matInput required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Discount</mat-label>
+              <input [(ngModel)]="formData.discount" name="discount" type="number" matInput required>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
@@ -13,7 +81,7 @@
     </button>
 
     <button color="primary" mat-raised-button>
-        Save
+        Create
     </button>
   </mat-dialog-actions>
 </form>
