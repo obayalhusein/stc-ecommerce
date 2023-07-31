@@ -15,4 +15,10 @@ export class AdminProductsService {
 
     return this.http.get(url);
   }
+
+  deleteProductByIdApi(productId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/products/${productId}`;
+
+    return this.http.delete(url);
+  }
 }

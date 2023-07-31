@@ -1,8 +1,10 @@
 import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatSort, Sort } from '@angular/material/sort';
 import {MatTableDataSource } from '@angular/material/table';
 import { AdminProductsService } from '../../services/admin-products.service';
+import { ProductsDeleteDialogComponent } from '../products-delete-dialog/products-delete-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'products-table',
@@ -10,35 +12,26 @@ import { AdminProductsService } from '../../services/admin-products.service';
   styleUrls: ['./products-table.component.scss']
 })
 export class ProductsTableComponent implements OnInit, AfterViewInit  {
-  isLoadingData: boolean = true;
-  productsList: Array<any> = [];
-  displayedColumns: string[] = ['id', 'title', 'category', 'price', 'quantity', 'discount', 'tools'];
-  dataSource = new MatTableDataSource(this.productsList);
+  @Input() isLoadingData: boolean = true;
+  @Input() productsList: Array<any> = [];
+  @Output() dataChanged = new EventEmitter()
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, private _adminProductsService: AdminProductsService) {}
+  displayedColumns: string[] = ['id', 'title', 'category', 'price', 'quantity', 'discount', 'tools'];
+  dataSource: any = new MatTableDataSource([]);
+
+  constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) {}
 
   @ViewChild(MatSort) sort: any;
 
   ngOnInit() {
-    this.fetchProductsData();
+  }
+
+  ngOnChanges(): void {
+    this.dataSource = new MatTableDataSource(this.productsList);
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-  }
-
-  fetchProductsData() {
-    this._adminProductsService.getProductsApi().subscribe({
-      next: (result) => {
-        this.isLoadingData = false;
-        this.productsList = result.data;
-        this.dataSource = new MatTableDataSource(this.productsList);
-      },
-      error: (error) => {
-        this.isLoadingData = false;
-        console.log(error)
-      }
-    });
   }
 
   announceSortChange(sortState: Sort) {
@@ -47,6 +40,20 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  showDeleteProductDialog(product: any) {
+    const data = {
+      product
+    };
+
+    const dialogRef = this.dialog.open(ProductsDeleteDialogComponent, {data} );
+
+    dialogRef.afterClosed().subscribe((data: any) => {
+      if (data.isSubmitted) {
+        this.dataChanged.emit();
+      }
+    });
   }
 
 }

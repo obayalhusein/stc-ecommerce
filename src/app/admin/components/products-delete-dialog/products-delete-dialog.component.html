@@ -1,0 +1,17 @@
+<div class="text-xl" mat-dialog-title>Delete Product</div>
+
+<mat-dialog-content>
+  <p>
+    Are you sure you want to delete <b>{{ data.product.attributes.title }}</b>?
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button color="primary" mat-button mat-dialog-close>
+    Cancel
+  </button>
+
+  <button (click)="submitAction()" [disabled]="isSubmitting" color="warn" mat-raised-button>
+      Delete
+  </button>
+</mat-dialog-actions>

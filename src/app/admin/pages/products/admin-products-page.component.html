@@ -1,11 +1,15 @@
 <div class="flex justify-between items-center mb-5">
   <h1 class="text-3xl">Products</h1>
-  <button color="primary" mat-flat-button>
+  <button (click)="showNewProductDialog()" color="primary" mat-flat-button>
     <mat-icon>add</mat-icon>
     New Product
   </button>
 </div>
 
 <div>
-  <products-table />
+  <products-table
+    [isLoadingData]="isLoadingData"
+    [productsList]="productsList"
+    (dataChanged)="fetchProductsData()"
+  />
 </div>

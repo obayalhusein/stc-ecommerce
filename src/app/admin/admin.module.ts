@@ -14,6 +14,9 @@ import { AdminOrdersPageComponent } from './pages/orders/admin-orders-page.compo
 
 // Components
 import { ProductsTableComponent } from './components/products-table/products-table.component';
+import { ProductsNewDialogComponent } from './components/products-new-dialog/products-new-dialog.component';
+import { ProductsDeleteDialogComponent } from './components/products-delete-dialog/products-delete-dialog.component';
+import { ProductsEditDialogComponent } from './components/products-edit-dialog/products-edit-dialog.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import { ProductsTableComponent } from './components/products-table/products-tab
     AdminProductsPageComponent,
     AdminOrdersPageComponent,
     ProductsTableComponent,
+    ProductsNewDialogComponent,
+    ProductsEditDialogComponent,
+    ProductsDeleteDialogComponent,
   ],
   imports: [
     CommonModule,
