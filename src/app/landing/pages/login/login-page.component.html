@@ -1,24 +1,30 @@
 <h1 class="text-3xl font-semibold mb-2">Login</h1>
 <p class="text-gray-500 mb-4">This content will be centered both horizontally and vertically on the page.</p>
-<mat-card>
-  <mat-card-content>
-    <div>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" #first>
-      </mat-form-field>
-    </div>
 
-    <div>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Password</mat-label>
-        <input matInput type="password">
-      </mat-form-field>
-    </div>
-  </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-flat-button color="primary">Login</button>
-  </mat-card-actions>
-</mat-card>
+<auth-error-alert [message]="errorMessage" />
+
+<form (submit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Email or Password</mat-label>
+          <input [(ngModel)]="formData.identifier" name="text" type="identifier" matInput required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="formData.password" name="password" type="password" matInput required>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button type="submit" [disabled]="isSubmitting" mat-flat-button color="primary">Login</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
 
 <p class="mt-3">Don't have an account? <a routerLink="/register">Create Account</a></p>

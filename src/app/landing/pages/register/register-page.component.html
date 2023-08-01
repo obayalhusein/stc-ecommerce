@@ -1,32 +1,37 @@
 <h1 class="text-3xl font-semibold mb-2">Create New Account</h1>
 <p class="text-gray-500 mb-4">This content will be centered both horizontally and vertically on the page.</p>
-<mat-card>
-  <mat-card-content>
-    <div>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" #first>
-      </mat-form-field>
-    </div>
 
-    <div>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Password</mat-label>
-        <input matInput type="password">
-      </mat-form-field>
-    </div>
+<auth-error-alert [message]="errorMessage" />
 
-    <div>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput type="password">
-      </mat-form-field>
-    </div>
+<form (submit)="onSubmit()">
+  <mat-card>
+    <mat-card-content>
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Username</mat-label>
+          <input [(ngModel)]="formData.username" name="username" matInput type="text" #first required>
+        </mat-form-field>
+      </div>
 
-  </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-flat-button color="primary">Register</button>
-  </mat-card-actions>
-</mat-card>
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="formData.email" name="email" matInput type="email" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="formData.password" name="password" matInput type="password" required>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button type="submit" [disabled]="isSubmitting" mat-flat-button color="primary">Create account</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
 
 <p class="mt-3">Already have an account? <a routerLink="/login">Login</a></p>

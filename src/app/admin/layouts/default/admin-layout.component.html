@@ -4,8 +4,8 @@
   </button>
   <vector-logo color="white" />
   <span class="mx-auto"></span>
-  <span>test@test.com</span>
-  <button mat-icon-button>
+  <span>{{ userInfo.email }}</span>
+  <button (click)="logout()" mat-icon-button>
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>

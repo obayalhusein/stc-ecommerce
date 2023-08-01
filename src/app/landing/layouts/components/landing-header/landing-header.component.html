@@ -5,10 +5,18 @@
   <button class="ms-3" color="primary" routerLink="/" mat-button>
     Marketplace
   </button>
-  <button class="ms-3" color="primary" routerLink="/login" mat-stroked-button>
-    Login
-  </button>
-  <button class="ms-3" color="primary" routerLink="/register" mat-raised-button>
-    Create Account
-  </button>
+  <ng-container *ngIf="isLoggedIn; else elseTemplate">
+    <button (click)="logout()" mat-icon-button>
+      <mat-icon>logout</mat-icon>
+    </button>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <button class="ms-3" color="primary" routerLink="/login" mat-stroked-button>
+      Login
+    </button>
+    <button class="ms-3" color="primary" routerLink="/register" mat-raised-button>
+      Create Account
+    </button>
+  </ng-template>
+
 </mat-toolbar>
