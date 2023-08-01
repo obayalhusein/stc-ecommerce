@@ -26,7 +26,7 @@ export class CategoriesNewDialogComponent implements OnInit {
       data: this.formData
     };
 
-    this._adminCategoriesService.postCategoryApi(data).subscribe({
+    this._adminCategoriesService.storeCategoryApi(data).subscribe({
       next: (result) => {
         this._dialogRef.close({ isSubmitted: true });
       },

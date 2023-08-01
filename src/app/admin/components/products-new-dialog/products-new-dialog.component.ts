@@ -57,14 +57,14 @@ export class ProductsNewDialogComponent implements OnInit {
 
   onSubmit(): void {
     this.isSubmitting = true;
-    
+
     const data = new FormData();
     data.append('data', JSON.stringify(this.formData));
     for (const file of this.formData.preview) {
       data.append('files.preview', file);
     }
 
-    this._adminProductsService.postProductApi(data).subscribe({
+    this._adminProductsService.storeProductApi(data).subscribe({
       next: (result) => {
         this._dialogRef.close({ isSubmitted: true });
       },

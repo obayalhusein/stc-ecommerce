@@ -16,13 +16,7 @@ export class AdminProductsService {
     return this.http.get(url);
   }
 
-  deleteProductByIdApi(productId: number): Observable<any> {
-    let url = `${environment.baseUrl}/api/products/${productId}`;
-
-    return this.http.delete(url);
-  }
-
-  postProductApi(payload: any): Observable<any> {
+  storeProductApi(payload: any): Observable<any> {
     let url = `${environment.baseUrl}/api/products`;
 
     return this.http.post<any>(url, payload);
@@ -32,6 +26,12 @@ export class AdminProductsService {
     let url = `${environment.baseUrl}/api/products/${productId}`;
 
     return this.http.put<any>(url, payload);
+  }
+
+  deleteProductByIdApi(productId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/products/${productId}`;
+
+    return this.http.delete(url);
   }
 
 }
