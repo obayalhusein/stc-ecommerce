@@ -16,4 +16,21 @@ export class AdminCategoriesService {
     return this.http.get(url);
   }
 
+  postCategoryApi(payload: any): Observable<any> {
+    let url = `${environment.baseUrl}/api/categories`;
+
+    return this.http.post<any>(url, payload);
+  }
+
+  updateCategoryApi(payload: any, categoryId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/categories/${categoryId}`;
+
+    return this.http.put<any>(url, payload);
+  }
+
+  deleteCategoryByIdApi(categoryId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/categories/${categoryId}`;
+
+    return this.http.delete(url);
+  }
 }

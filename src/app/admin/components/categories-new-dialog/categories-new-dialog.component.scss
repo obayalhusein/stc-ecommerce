@@ -1,0 +1,8 @@
+::ng-deep {
+  mat-dialog-container {
+    &.mat-mdc-dialog-container.mdc-dialog  {
+      width: 70vw;
+      max-width: 400px;
+    }
+  }
+}

@@ -17,6 +17,10 @@ import { ProductsTableComponent } from './components/products-table/products-tab
 import { ProductsNewDialogComponent } from './components/products-new-dialog/products-new-dialog.component';
 import { ProductsDeleteDialogComponent } from './components/products-delete-dialog/products-delete-dialog.component';
 import { ProductsEditDialogComponent } from './components/products-edit-dialog/products-edit-dialog.component';
+import { CategoriesTableComponent } from './components/categories-table/categories-table.component';
+import { CategoriesDeleteDialogComponent } from './components/categories-delete-dialog/categories-delete-dialog.component';
+import { CategoriesEditDialogComponent } from './components/categories-edit-dialog/categories-edit-dialog.component';
+import { CategoriesNewDialogComponent } from './components/categories-new-dialog/categories-new-dialog.component';
 
 
 @NgModule({
@@ -30,6 +34,10 @@ import { ProductsEditDialogComponent } from './components/products-edit-dialog/p
     ProductsNewDialogComponent,
     ProductsEditDialogComponent,
     ProductsDeleteDialogComponent,
+    CategoriesTableComponent,
+    CategoriesNewDialogComponent,
+    CategoriesEditDialogComponent,
+    CategoriesDeleteDialogComponent,
   ],
   imports: [
     CommonModule,

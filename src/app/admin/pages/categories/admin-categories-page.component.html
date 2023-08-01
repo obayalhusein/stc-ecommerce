@@ -1,7 +1,15 @@
 <div class="flex justify-between items-center mb-5">
   <h1 class="text-3xl">Categories</h1>
-  <button color="primary" mat-flat-button>
+  <button (click)="showNewCategoryDialog()" color="primary" mat-flat-button>
     <mat-icon>add</mat-icon>
     New Category
   </button>
+</div>
+
+<div>
+  <categories-table
+    [isLoadingData]="isLoadingData"
+    [categoriesList]="categoriesList"
+    (dataChanged)="fetchCategoriesData()"
+  />
 </div>
