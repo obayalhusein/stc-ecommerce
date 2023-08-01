@@ -13,14 +13,14 @@ import { AdminCategoriesPageComponent } from './pages/categories/admin-categorie
 import { AdminOrdersPageComponent } from './pages/orders/admin-orders-page.component';
 
 // Components
-import { ProductsTableComponent } from './components/products-table/products-table.component';
-import { ProductsNewDialogComponent } from './components/products-new-dialog/products-new-dialog.component';
-import { ProductsDeleteDialogComponent } from './components/products-delete-dialog/products-delete-dialog.component';
-import { ProductsEditDialogComponent } from './components/products-edit-dialog/products-edit-dialog.component';
-import { CategoriesTableComponent } from './components/categories-table/categories-table.component';
-import { CategoriesDeleteDialogComponent } from './components/categories-delete-dialog/categories-delete-dialog.component';
-import { CategoriesEditDialogComponent } from './components/categories-edit-dialog/categories-edit-dialog.component';
-import { CategoriesNewDialogComponent } from './components/categories-new-dialog/categories-new-dialog.component';
+import { ProductsTableComponent } from './components/products/show-table/products-table.component';
+import { ProductsNewDialogComponent } from './components/products/create-dialog/products-new-dialog.component';
+import { ProductsDeleteDialogComponent } from './components/products/delete-dialog/products-delete-dialog.component';
+import { ProductsEditDialogComponent } from './components/products/edit-dialog/products-edit-dialog.component';
+import { CategoriesTableComponent } from './components/categories/show-table/categories-table.component';
+import { CategoriesDeleteDialogComponent } from './components/categories/delete-dialog/categories-delete-dialog.component';
+import { CategoriesEditDialogComponent } from './components/categories/edit-dialog/categories-edit-dialog.component';
+import { CategoriesNewDialogComponent } from './components/categories/create-dialog/categories-new-dialog.component';
 
 
 @NgModule({

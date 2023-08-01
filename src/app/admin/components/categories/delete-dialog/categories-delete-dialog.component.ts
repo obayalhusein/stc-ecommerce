@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AdminCategoriesService } from '../../services/admin-categories.service';
+import { AdminCategoriesService } from '../../../services/admin-categories.service';
 
 @Component({
   selector: 'app-categories-delete-dialog',
@@ -10,7 +10,7 @@ import { AdminCategoriesService } from '../../services/admin-categories.service'
 export class CategoriesDeleteDialogComponent implements OnInit {
   isSubmitting: boolean = false;
 
-  constructor(private _dialogRef: MatDialogRef<CategoriesDeleteDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any,  private _adminCategoriesService: AdminCategoriesService) { }
+  constructor(private _dialogRef: MatDialogRef<CategoriesDeleteDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private _adminCategoriesService: AdminCategoriesService) { }
 
   ngOnInit() {
   }

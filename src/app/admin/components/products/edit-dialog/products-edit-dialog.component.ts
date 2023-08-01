@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AdminProductsService } from '../../services/admin-products.service';
-import { AdminCategoriesService } from '../../services/admin-categories.service';
+import { AdminProductsService } from '../../../services/admin-products.service';
+import { AdminCategoriesService } from '../../../services/admin-categories.service';
 import { environment } from 'src/enviremonets';
 
 @Component({
@@ -70,10 +70,10 @@ export class ProductsEditDialogComponent implements OnInit {
 
   onSubmit(): void {
     this.isSubmitting = true;
-    
+
     const data = new FormData();
     data.append('data', JSON.stringify(this.formData));
-    if(this.formData.preview.length) {
+    if (this.formData.preview.length) {
       for (const file of this.formData.preview) {
         data.append('files.preview', file);
       }

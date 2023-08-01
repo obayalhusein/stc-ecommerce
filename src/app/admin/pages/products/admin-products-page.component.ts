@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductsNewDialogComponent } from '../../components/products-new-dialog/products-new-dialog.component';
+import { ProductsNewDialogComponent } from '../../components/products/create-dialog/products-new-dialog.component';
 import { AdminProductsService } from '../../services/admin-products.service';
 
 @Component({
@@ -33,7 +33,7 @@ export class AdminProductsPageComponent implements OnInit {
   }
 
   showNewProductDialog() {
-    const dialogRef = this.dialog.open(ProductsNewDialogComponent, {} );
+    const dialogRef = this.dialog.open(ProductsNewDialogComponent, {});
 
     dialogRef.afterClosed().subscribe((data: any) => {
       if (data?.isSubmitted) {

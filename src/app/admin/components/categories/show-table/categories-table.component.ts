@@ -3,8 +3,8 @@ import { Component, OnInit, Output, EventEmitter, AfterViewInit, Input, ViewChil
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CategoriesDeleteDialogComponent } from '../categories-delete-dialog/categories-delete-dialog.component';
-import { CategoriesEditDialogComponent } from '../categories-edit-dialog/categories-edit-dialog.component';
+import { CategoriesDeleteDialogComponent } from '../delete-dialog/categories-delete-dialog.component';
+import { CategoriesEditDialogComponent } from '../edit-dialog/categories-edit-dialog.component';
 
 @Component({
   selector: 'categories-table',
@@ -19,7 +19,7 @@ export class CategoriesTableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'title', 'description', 'tools'];
   dataSource: any = new MatTableDataSource([]);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) { }
 
   @ViewChild(MatSort) sort: any;
 
@@ -47,7 +47,7 @@ export class CategoriesTableComponent implements OnInit, AfterViewInit {
       category
     };
 
-    const dialogRef = this.dialog.open(CategoriesEditDialogComponent, {data} );
+    const dialogRef = this.dialog.open(CategoriesEditDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data: any) => {
       if (data?.isSubmitted) {
@@ -61,7 +61,7 @@ export class CategoriesTableComponent implements OnInit, AfterViewInit {
       category
     };
 
-    const dialogRef = this.dialog.open(CategoriesDeleteDialogComponent, {data} );
+    const dialogRef = this.dialog.open(CategoriesDeleteDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data: any) => {
       if (data?.isSubmitted) {

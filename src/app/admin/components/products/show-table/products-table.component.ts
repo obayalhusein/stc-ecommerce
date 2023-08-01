@@ -1,18 +1,18 @@
-import {LiveAnnouncer} from '@angular/cdk/a11y';
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {MatSort, Sort } from '@angular/material/sort';
-import {MatTableDataSource } from '@angular/material/table';
-import { AdminProductsService } from '../../services/admin-products.service';
-import { ProductsDeleteDialogComponent } from '../products-delete-dialog/products-delete-dialog.component';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { AdminProductsService } from '../../../services/admin-products.service';
+import { ProductsDeleteDialogComponent } from '../delete-dialog/products-delete-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductsEditDialogComponent } from '../products-edit-dialog/products-edit-dialog.component';
+import { ProductsEditDialogComponent } from '../edit-dialog/products-edit-dialog.component';
 
 @Component({
   selector: 'products-table',
   templateUrl: './products-table.component.html',
   styleUrls: ['./products-table.component.scss']
 })
-export class ProductsTableComponent implements OnInit, AfterViewInit  {
+export class ProductsTableComponent implements OnInit, AfterViewInit {
   @Input() isLoadingData: boolean = true;
   @Input() productsList: Array<any> = [];
   @Output() dataChanged = new EventEmitter()
@@ -20,7 +20,7 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
   displayedColumns: string[] = ['id', 'title', 'category', 'price', 'quantity', 'discount', 'tools'];
   dataSource: any = new MatTableDataSource([]);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) { }
 
   @ViewChild(MatSort) sort: any;
 
@@ -48,7 +48,7 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
       product
     };
 
-    const dialogRef = this.dialog.open(ProductsEditDialogComponent, {data} );
+    const dialogRef = this.dialog.open(ProductsEditDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data: any) => {
       if (data?.isSubmitted) {
@@ -62,7 +62,7 @@ export class ProductsTableComponent implements OnInit, AfterViewInit  {
       product
     };
 
-    const dialogRef = this.dialog.open(ProductsDeleteDialogComponent, {data} );
+    const dialogRef = this.dialog.open(ProductsDeleteDialogComponent, { data });
 
     dialogRef.afterClosed().subscribe((data: any) => {
       if (data?.isSubmitted) {
