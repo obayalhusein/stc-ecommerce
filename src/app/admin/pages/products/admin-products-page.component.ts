@@ -24,11 +24,9 @@ export class AdminProductsPageComponent implements OnInit {
         this.productsList = result.data;
       },
       error: (error) => {
+        this.isLoadingData = false;
         console.log(error)
       },
-      complete: () => {
-        this.isLoadingData = false;
-      }
     });
   }
 

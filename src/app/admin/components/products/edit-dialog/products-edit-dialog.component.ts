@@ -84,11 +84,9 @@ export class ProductsEditDialogComponent implements OnInit {
         this._dialogRef.close({ isSubmitted: true });
       },
       error: (error) => {
+        this.isSubmitting = false;
         console.log(error)
       },
-      complete: () => {
-        this.isSubmitting = true;
-      }
     });
   }
 
