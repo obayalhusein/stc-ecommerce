@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../core/guards/auth.guard';
 import { AdminLayoutComponent } from './layouts/default/admin-layout.component';
 import { AdminHomePageComponent } from './pages/home/admin-home-page.component';
 import { AdminCategoriesPageComponent } from './pages/categories/admin-categories-page.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: AdminHomePageComponent },
     ]
@@ -17,6 +19,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'categories', component: AdminCategoriesPageComponent },
     ]
@@ -24,6 +27,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'products', component: AdminProductsPageComponent },
     ]
@@ -31,6 +35,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'orders', component: AdminOrdersPageComponent },
     ]
