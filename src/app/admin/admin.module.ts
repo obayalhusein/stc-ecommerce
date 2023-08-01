@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminRoutingModule } from './admin.routing';
+import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
+import { AdminRoutingModule } from './admin.routing';
 
 // Layouts
 import { AdminLayoutComponent } from './layouts/default/admin-layout.component';
@@ -41,8 +42,9 @@ import { CategoriesNewDialogComponent } from './components/categories/create-dia
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    CoreModule,
     SharedModule,
+    AdminRoutingModule,
   ]
 })
 export class AdminModule { }
