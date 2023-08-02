@@ -24,6 +24,8 @@ import { ProductsGridListComponent } from './components/products-grid-list/produ
 import { ProductCardItemComponent } from './components/product-card-item/product-card-item.component';
 import { ProductCardItemSkeletonComponent } from './components/product-card-item-skeleton/product-card-item-skeleton.component';
 import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-error-alert.component';
+import { CategoriesTabsComponent } from './components/categories-tabs/categories-tabs.component';
+import { CategoriesTabsSkeletonComponent } from './components/categories-tabs-skeleton/categories-tabs-skeleton.component';
 
 
 @NgModule({
@@ -31,17 +33,19 @@ import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-erro
     LoginPageComponent,
     RegisterPageComponent,
     LandingLayoutComponent,
+    LandingHeaderComponent,
+    LandingFooterComponent,
     LandingHomePageComponent,
     LandingProductsPageComponent,
     LandingProductsShowPageComponent,
     LandingCategoriesPageComponent,
     AuthLayoutComponent,
-    LandingHeaderComponent,
-    LandingFooterComponent,
+    AuthErrorAlertComponent,
     ProductsGridListComponent,
     ProductCardItemComponent,
     ProductCardItemSkeletonComponent,
-    AuthErrorAlertComponent,
+    CategoriesTabsComponent,
+    CategoriesTabsSkeletonComponent,
   ],
   imports: [
     CommonModule,

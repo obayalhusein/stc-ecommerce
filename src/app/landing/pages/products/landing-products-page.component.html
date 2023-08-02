@@ -2,5 +2,6 @@
   <div class="px-5">
     <h1 class="text-3xl font-semibold mb-2">Latest Products</h1>
   </div>
-  <products-grid-list [productsList]="productsList" [isLoading]="isLoading" />
+  <categories-tabs [categoriesList]="categoriesList" [isLoading]="isLoadingCategories" />
+  <products-grid-list [productsList]="productsList" [isLoading]="isLoadingProducts" />
 </section>

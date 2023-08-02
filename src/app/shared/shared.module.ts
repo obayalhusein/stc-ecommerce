@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatBadgeModule } from '@angular/material/badge';
 import { SkeletonLoaderComponent } from './components/skeleton-loader/skeleton-loader.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 const MatAngularModules = [
@@ -38,6 +39,7 @@ const MatAngularModules = [
   MatDialogModule,
   MatSelectModule,
   MatBadgeModule,
+  MatTabsModule,
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicProductsService } from '../../services/public-products.service';
+import { PublicCategoriesService } from '../../services/public-categories.service';
 
 @Component({
   selector: 'app-landing-products-page',
@@ -7,13 +8,16 @@ import { PublicProductsService } from '../../services/public-products.service';
   styleUrls: ['./landing-products-page.component.scss']
 })
 export class LandingProductsPageComponent implements OnInit {
-  isLoading: boolean = true;
+  isLoadingProducts: boolean = true;
+  isLoadingCategories: boolean = true;
   productsList: Array<any> = [];
+  categoriesList: Array<any> = [];
 
-  constructor(private _publicProductsService: PublicProductsService) { }
+  constructor(private _publicProductsService: PublicProductsService, private _publicCategoriesService: PublicCategoriesService) { }
 
   ngOnInit() {
     this.fetchProductsData();
+    this.fetchCategoriesData();
   }
 
   fetchProductsData() {
@@ -25,7 +29,21 @@ export class LandingProductsPageComponent implements OnInit {
         console.log(error)
       },
       complete: () => {
-        this.isLoading = false;
+        this.isLoadingProducts = false;
+      }
+    });
+  }
+
+  fetchCategoriesData() {
+    this._publicCategoriesService.getCategoriesApi().subscribe({
+      next: (result) => {
+        this.categoriesList = result.data;
+      },
+      error: (error) => {
+        console.log(error)
+      },
+      complete: () => {
+        this.isLoadingCategories = false;
       }
     });
   }
