@@ -5,3 +5,11 @@
 .bg-accent {
   background-color: map-get($mat-accent, 500);
 }
+
+.text-primary {
+  color: map-get($mat-primary, 500);
+}
+
+.text-accent {
+  color: map-get($mat-accent, 500);
+}

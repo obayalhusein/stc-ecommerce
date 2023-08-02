@@ -1,5 +1,5 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { PublicProductsService } from './../../services/public-products.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'products-grid-list',
@@ -7,23 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-grid-list.component.scss']
 })
 export class ProductsGridListComponent implements OnInit {
-  productsList: Array<any> = [];
+  @Input() productsList: Array<any> = [];
 
   constructor(private _publicProductsService: PublicProductsService) { }
 
   ngOnInit() {
-    this.fetchProductsData();
-  }
-
-  fetchProductsData() {
-    this._publicProductsService.getProductsApi().subscribe({
-      next: (result) => {
-        this.productsList = result.data;
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    });
   }
 
 }

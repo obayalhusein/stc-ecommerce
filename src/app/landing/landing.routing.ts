@@ -7,6 +7,7 @@ import { RegisterPageComponent } from './pages/register/register-page.component'
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { LandingProductsPageComponent } from './pages/products/landing-products-page.component';
 import { LandingProductsShowPageComponent } from './pages/products/show/landing-products-show-page.component';
+import { LandingCategoriesPageComponent } from './pages/categories/landing-categories-page.component';
 
 const routes: Routes = [
   {
@@ -18,10 +19,17 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: AuthLayoutComponent,
+    component: LandingLayoutComponent,
     children: [
       { path: '', component: LandingProductsPageComponent },
       { path: ':id', component: LandingProductsShowPageComponent },
+    ]
+  },
+  {
+    path: 'categories',
+    component: LandingLayoutComponent,
+    children: [
+      { path: '', component: LandingCategoriesPageComponent },
     ]
   },
   {
