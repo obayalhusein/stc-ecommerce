@@ -13,6 +13,9 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { LoginPageComponent } from './pages/login/login-page.component';
 import { RegisterPageComponent } from './pages/register/register-page.component';
 import { LandingHomePageComponent } from './pages/home/landing-home-page.component';
+import { LandingProductsPageComponent } from './pages/products/landing-products-page.component';
+import { LandingProductsShowPageComponent } from './pages/products/show/landing-products-show-page.component';
+import { LandingCategoriesPageComponent } from './pages/categories/landing-categories-page.component';
 
 // Components
 import { LandingFooterComponent } from './layouts/components/landing-footer/landing-footer.component';
@@ -28,6 +31,9 @@ import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-erro
     RegisterPageComponent,
     LandingLayoutComponent,
     LandingHomePageComponent,
+    LandingProductsPageComponent,
+    LandingProductsShowPageComponent,
+    LandingCategoriesPageComponent,
     AuthLayoutComponent,
     LandingHeaderComponent,
     LandingFooterComponent,

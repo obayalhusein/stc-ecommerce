@@ -5,6 +5,8 @@ import { LandingHomePageComponent } from './pages/home/landing-home-page.compone
 import { LoginPageComponent } from './pages/login/login-page.component';
 import { RegisterPageComponent } from './pages/register/register-page.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
+import { LandingProductsPageComponent } from './pages/products/landing-products-page.component';
+import { LandingProductsShowPageComponent } from './pages/products/show/landing-products-show-page.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,14 @@ const routes: Routes = [
     component: LandingLayoutComponent,
     children: [
       { path: '', component: LandingHomePageComponent },
+    ]
+  },
+  {
+    path: 'products',
+    component: AuthLayoutComponent,
+    children: [
+      { path: '', component: LandingProductsPageComponent },
+      { path: ':id', component: LandingProductsShowPageComponent },
     ]
   },
   {
