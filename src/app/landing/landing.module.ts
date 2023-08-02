@@ -20,12 +20,12 @@ import { LandingCategoriesPageComponent } from './pages/categories/landing-categ
 // Components
 import { LandingFooterComponent } from './layouts/components/landing-footer/landing-footer.component';
 import { LandingHeaderComponent } from './layouts/components/landing-header/landing-header.component';
-import { ProductsGridListComponent } from './components/products-grid-list/products-grid-list.component';
-import { ProductCardItemComponent } from './components/product-card-item/product-card-item.component';
-import { ProductCardItemSkeletonComponent } from './components/product-card-item-skeleton/product-card-item-skeleton.component';
-import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-error-alert.component';
-import { CategoriesTabsComponent } from './components/categories-tabs/categories-tabs.component';
-import { CategoriesTabsSkeletonComponent } from './components/categories-tabs-skeleton/categories-tabs-skeleton.component';
+import { ProductsGridListComponent } from './components/products/grid-list/products-grid-list.component';
+import { ProductCardItemComponent } from './components/products/card-item/product-card-item.component';
+import { ProductCardItemSkeletonComponent } from './components/products/card-item-skeleton/product-card-item-skeleton.component';
+import { AuthErrorAlertComponent } from './components/auth/error-alert/auth-error-alert.component';
+import { CategoriesTabsComponent } from './components/categories/tabs/categories-tabs.component';
+import { CategoriesTabsSkeletonComponent } from './components/categories/tabs-skeleton/categories-tabs-skeleton.component';
 
 
 @NgModule({
