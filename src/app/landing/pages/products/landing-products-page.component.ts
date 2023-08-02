@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicProductsService } from '../../services/public-products.service';
-import { PublicCategoriesService } from '../../services/public-categories.service';
+import { PublicProductsService } from '@landing/services/public-products.service';
+import { PublicCategoriesService } from '@landing/services/public-categories.service';
 
 @Component({
   selector: 'app-landing-products-page',

@@ -2,10 +2,9 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { AdminProductsService } from '../../../services/admin-products.service';
-import { ProductsDeleteDialogComponent } from '../delete-dialog/products-delete-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductsEditDialogComponent } from '../edit-dialog/products-edit-dialog.component';
+import { ProductsDeleteDialogComponent } from '@admin/components/products/delete-dialog/products-delete-dialog.component';
+import { ProductsEditDialogComponent } from '@admin/components/products/edit-dialog/products-edit-dialog.component';
 
 @Component({
   selector: 'products-table',

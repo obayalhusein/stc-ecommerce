@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AdminCategoriesService } from '../../../services/admin-categories.service';
+import { AdminCategoriesService } from '@admin/services/admin-categories.service';
 
 @Component({
   selector: 'app-categories-edit-dialog',

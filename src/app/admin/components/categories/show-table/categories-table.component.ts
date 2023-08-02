@@ -3,8 +3,8 @@ import { Component, OnInit, Output, EventEmitter, AfterViewInit, Input, ViewChil
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CategoriesDeleteDialogComponent } from '../delete-dialog/categories-delete-dialog.component';
-import { CategoriesEditDialogComponent } from '../edit-dialog/categories-edit-dialog.component';
+import { CategoriesDeleteDialogComponent } from '@admin/components/categories/delete-dialog/categories-delete-dialog.component';
+import { CategoriesEditDialogComponent } from '@admin/components/categories/edit-dialog/categories-edit-dialog.component';
 
 @Component({
   selector: 'categories-table',

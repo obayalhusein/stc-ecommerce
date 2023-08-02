@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminCategoriesService } from '../../services/admin-categories.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CategoriesNewDialogComponent } from '../../components/categories/create-dialog/categories-new-dialog.component';
+import { AdminCategoriesService } from '@admin/services/admin-categories.service';
+import { CategoriesNewDialogComponent } from '@admin/components/categories/create-dialog/categories-new-dialog.component';
 
 @Component({
   selector: 'app-admin-categories-page',
