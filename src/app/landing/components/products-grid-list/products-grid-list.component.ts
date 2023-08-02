@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PublicProductsService } from './../../services/public-products.service';
 
 @Component({
   selector: 'products-grid-list',
@@ -7,9 +6,10 @@ import { PublicProductsService } from './../../services/public-products.service'
   styleUrls: ['./products-grid-list.component.scss']
 })
 export class ProductsGridListComponent implements OnInit {
+  @Input() isLoading: boolean = false;
   @Input() productsList: Array<any> = [];
 
-  constructor(private _publicProductsService: PublicProductsService) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -22,6 +22,7 @@ import { LandingFooterComponent } from './layouts/components/landing-footer/land
 import { LandingHeaderComponent } from './layouts/components/landing-header/landing-header.component';
 import { ProductsGridListComponent } from './components/products-grid-list/products-grid-list.component';
 import { ProductCardItemComponent } from './components/product-card-item/product-card-item.component';
+import { ProductCardItemSkeletonComponent } from './components/product-card-item-skeleton/product-card-item-skeleton.component';
 import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-error-alert.component';
 
 
@@ -39,6 +40,7 @@ import { AuthErrorAlertComponent } from './components/auth-error-alert/auth-erro
     LandingFooterComponent,
     ProductsGridListComponent,
     ProductCardItemComponent,
+    ProductCardItemSkeletonComponent,
     AuthErrorAlertComponent,
   ],
   imports: [

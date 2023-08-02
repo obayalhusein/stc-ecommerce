@@ -2,4 +2,8 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
     <product-card-item *ngFor="let product of productsList" [item]="product" />
   </div>
+
+  <div *ngIf="isLoading">
+    <product-card-item-skeleton [repeat]="10" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4" />
+  </div>
 </div>

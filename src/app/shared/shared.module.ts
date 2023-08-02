@@ -19,6 +19,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatBadgeModule } from '@angular/material/badge';
+import { SkeletonLoaderComponent } from './components/skeleton-loader/skeleton-loader.component';
 
 
 const MatAngularModules = [
@@ -42,6 +43,7 @@ const MatAngularModules = [
 @NgModule({
   declarations: [
     VectorLogoComponent,
+    SkeletonLoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +56,7 @@ const MatAngularModules = [
     HttpClientModule,
     VectorLogoComponent,
     MatAngularModules,
+    SkeletonLoaderComponent,
   ],
 })
 

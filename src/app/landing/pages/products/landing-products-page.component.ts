@@ -7,6 +7,7 @@ import { PublicProductsService } from '../../services/public-products.service';
   styleUrls: ['./landing-products-page.component.scss']
 })
 export class LandingProductsPageComponent implements OnInit {
+  isLoading: boolean = true;
   productsList: Array<any> = [];
 
   constructor(private _publicProductsService: PublicProductsService) { }
@@ -22,6 +23,9 @@ export class LandingProductsPageComponent implements OnInit {
       },
       error: (error) => {
         console.log(error)
+      },
+      complete: () => {
+        this.isLoading = false;
       }
     });
   }
