@@ -1,1 +1,3 @@
-$mat-typography: mat.define-typography-config();
+$mat-typography: mat-typography-config(
+  $font-family: 'STC-Forward-Regular, sans-serif'
+);

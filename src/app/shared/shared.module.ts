@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 const MatAngularModules = [
@@ -35,6 +36,7 @@ const MatAngularModules = [
   MatProgressSpinnerModule,
   MatDialogModule,
   MatSelectModule,
+  MatBadgeModule,
 ];
 
 @NgModule({

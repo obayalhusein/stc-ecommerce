@@ -1,9 +1,29 @@
 <mat-toolbar color="transparent">
-  <a routerLink="/" class="me-auto">
+  <a routerLink="/">
     <vector-logo />
   </a>
   <button class="ms-3" color="primary" routerLink="/" mat-button>
-    Marketplace
+    عربي
+  </button>
+  <div class="mx-auto"></div>
+  <button class="ms-3" color="primary" routerLink="/" mat-button>
+    Home
+  </button>
+  <button class="ms-3" color="primary" routerLink="/" mat-button>
+    Products
+  </button>
+  <button class="ms-3" color="primary" routerLink="/" mat-button>
+    Categories
+  </button>
+  <button class="ms-3" color="primary" routerLink="/" mat-button>
+    Subscriptions
+  </button>
+  <div class="mx-auto"></div>
+  <button color="primary" routerLink="/" mat-icon-button>
+    <mat-icon>favorite_border</mat-icon>
+  </button>
+  <button color="primary" routerLink="/" mat-icon-button>
+    <mat-icon [matBadge]="cartItemCount" matBadgeColor="warn">shopping_cart</mat-icon>
   </button>
   <ng-container *ngIf="isLoggedIn; else elseTemplate">
     <button (click)="logout()" mat-icon-button>

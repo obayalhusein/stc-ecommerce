@@ -10,6 +10,7 @@ export class LandingHeaderComponent implements OnInit {
   userInfo: any = {};
   isLoggedIn: boolean = false;
   drawerOpen: boolean = true;
+  cartItemCount: number = 3;
 
   constructor(private _authService: AuthService) { }
 
