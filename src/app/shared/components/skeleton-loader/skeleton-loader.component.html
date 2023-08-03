@@ -1,5 +1,8 @@
 <ng-container [ngSwitch]="type">
-  <div *ngSwitchCase="'text'" class="skeleton-loader skeleton-loader-text" style="min-width: 100px;"></div>
-  <div *ngSwitchCase="'image'" class="skeleton-loader skeleton-loader-image aspect-square"></div>
-  <div *ngSwitchCase="'button-fab'" class="skeleton-loader skeleton-loader-button-fab"></div>
+  <div *ngSwitchCase="'text'" class="skeleton-loader skeleton-loader-text" [style.maxWidth]="maxWidth"></div>
+  <div *ngSwitchCase="'image'" class="skeleton-loader skeleton-loader-image aspect-square" [style.maxWidth]="maxWidth"></div>
+  <div *ngSwitchCase="'video'" class="skeleton-loader skeleton-loader-image aspect-video" [style.maxWidth]="maxWidth"></div>
+  <div *ngSwitchCase="'button'" class="skeleton-loader skeleton-loader-button" [style.maxWidth]="maxWidth"></div>
+  <div *ngSwitchCase="'input'" class="skeleton-loader skeleton-loader-input" [style.maxWidth]="maxWidth"></div>
+  <div *ngSwitchCase="'button-fab'" class="skeleton-loader skeleton-loader-button-fab" [style.maxWidth]="maxWidth"></div>
 </ng-container>

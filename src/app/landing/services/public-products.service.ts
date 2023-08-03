@@ -15,4 +15,11 @@ export class PublicProductsService {
 
     return this.http.get(url);
   }
+
+  getProductByIdApi(productId: number): Observable<any> {
+    let url = `${environment.baseUrl}/api/products/${productId}?populate=*`;
+
+    return this.http.get(url);
+  }
+
 }

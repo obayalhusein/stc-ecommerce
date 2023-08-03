@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SkeletonLoaderComponent implements OnInit {
   @Input() type: string = "text";
+  @Input() maxWidth: string = "auto";
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-<a routerLink="/">
+<a [routerLink]="'/products/'+item.id">
   <div class="transform transition duration-300 hover:scale-105">
     <div class="relative aspect-square bg-gray-100 rounded overflow-hidden">
       <img class="absolute w-full h-full object-cover" mat-card-image [src]="baseUrl + item.attributes.preview.data[0].attributes.url" [alt]="item.attributes.title">

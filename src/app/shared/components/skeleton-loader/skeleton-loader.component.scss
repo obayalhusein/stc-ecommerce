@@ -24,9 +24,17 @@
   }
   &.skeleton-loader-text {
     border-radius: 50px;
+    min-width: 100px;
   }
-  &.skeleton-loader-text {
+  &.skeleton-loader-button {
     border-radius: 50px;
+    width: 150px;
+    height: 48px;
+  }
+  &.skeleton-loader-input {
+    border-radius: 10px;
+    min-width: 150px;
+    height: 57px;
   }
   &.skeleton-loader-button-fab {
     border-radius: 50px;

@@ -1,3 +1,97 @@
-<p>
-  landing-products-show-page works!
-</p>
+<ng-container *ngIf="isLoading; else elseTemplate">
+  <section class="px-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <div class="relative aspect-video mb-5">
+          <skeleton-loader type="video" />
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+          <div *ngFor="let loop of [1,2,3]" class="relative aspect-video border-solid border-2 border-gray-200 rounded overflow-hidden" role="button">
+            <skeleton-loader type="video" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-2xl md:text-4xl mb-3">
+          <skeleton-loader maxWidth="300px" />
+        </h1>
+        <p class="text-gray-500 mb-3 font-bold">
+          <skeleton-loader maxWidth="100px" />
+        </p>
+        <div class="text-gray=500 mb-3">
+          <div class="mb-1">
+            <skeleton-loader />
+          </div>
+          <skeleton-loader maxWidth="50%" />
+        </div>
+
+        <p class="text-xl md:text-4xl font-bold">
+          <skeleton-loader maxWidth="200px" />
+        </p>
+
+        <div class="flex items-center mt-8 mb-5">
+          <skeleton-loader type="button-fab" />
+
+          <skeleton-loader type="input" maxWidth="150px" />
+
+          <skeleton-loader type="button-fab" />
+        </div>
+
+        <skeleton-loader type="button" maxWidth="150px" />
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #elseTemplate>
+  <section class="px-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <div class="relative aspect-video mb-5">
+          <img [src]="selectedPreviewImage" class="absolute w-full h-full object-contain">
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+          <div *ngFor="let image of product.attributes.preview.data" (click)="selectPreviewImage(baseUrl + image.attributes.url)" class="relative aspect-video border-solid border-2 border-gray-200 rounded overflow-hidden" role="button">
+            <img [src]="baseUrl + image.attributes.url" [alt]="product.attributes.title" class="absolute w-full h-full object-contain">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-2xl md:text-4xl mb-3">{{ product.attributes.title }}</h1>
+        <p class="text-gray-500 mb-3 font-bold">{{ product.attributes.category.data.attributes.title }}</p>
+        <p class="text-gray=500 mb-3">{{ product.attributes.description }}</p>
+
+        <ng-container *ngIf="product.attributes.discount; else elseTemplate">
+          <div class="flex">
+            <p class="text-xl md:text-4xl font-bold me-2">{{ product.attributes.price - product.attributes.price * product.attributes.discount / 100 }} SAR</p>
+            <p class="text-md md:text-lg line-through text-gray-500">{{ product.attributes.price }} SAR</p>
+          </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <p class="text-xl md:text-4xl font-bold">{{ product.attributes.price }} SAR</p>
+        </ng-template>
+
+        <div class="flex items-center mt-8 mb-5">
+          <button color="accent" mat-icon-button>
+            <mat-icon>remove</mat-icon>
+          </button>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input type="number" min="1" [max]="product.attributes.quantity" value="1" matInput>
+          </mat-form-field>
+
+          <button color="accent" mat-icon-button>
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <button color="primary" mat-flat-button style="min-width: 150px">
+          <mat-icon>shopping_cart</mat-icon>
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </section>
+</ng-template>
+
+
