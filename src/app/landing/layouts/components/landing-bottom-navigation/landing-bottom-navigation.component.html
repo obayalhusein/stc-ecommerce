@@ -1,0 +1,41 @@
+<div class="md:hidden">
+  <mat-toolbar class="bottom-navigation fixed bottom-0 start-0 end-0 z-40 w-100 px-0 backdrop-blur-md">
+    <mat-tab-group class="w-full">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <a class="block" routerLink="/">
+            <div class="mb-1"><mat-icon>home</mat-icon></div>
+            <small>Home</small>
+          </a>
+        </ng-template>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <a class="block" routerLink="/categories">
+            <div class="mb-1"><mat-icon>folder</mat-icon></div>
+            <small>Categories</small>
+          </a>
+        </ng-template>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <a class="block">
+            <div class="mb-1"><mat-icon>shopping_cart</mat-icon></div>
+            <small>Cart</small>
+          </a>
+        </ng-template>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <a class="block" routerLink="/login">
+            <div class="mb-1"><mat-icon>person</mat-icon></div>
+            <small>Me</small>
+          </a>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-toolbar>
+</div>

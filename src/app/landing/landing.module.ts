@@ -20,6 +20,7 @@ import { LandingCategoriesPageComponent } from './pages/categories/landing-categ
 // Components
 import { LandingFooterComponent } from './layouts/components/landing-footer/landing-footer.component';
 import { LandingHeaderComponent } from './layouts/components/landing-header/landing-header.component';
+import { LandingBottomNavigationComponent } from './layouts/components/landing-bottom-navigation/landing-bottom-navigation.component';
 import { ProductsGridListComponent } from './components/products/grid-list/products-grid-list.component';
 import { ProductCardItemComponent } from './components/products/card-item/product-card-item.component';
 import { ProductCardItemSkeletonComponent } from './components/products/card-item-skeleton/product-card-item-skeleton.component';
@@ -35,6 +36,7 @@ import { CategoriesTabsSkeletonComponent } from './components/categories/tabs-sk
     LandingLayoutComponent,
     LandingHeaderComponent,
     LandingFooterComponent,
+    LandingBottomNavigationComponent,
     LandingHomePageComponent,
     LandingProductsPageComponent,
     LandingProductsShowPageComponent,
