@@ -1,7 +1,9 @@
-<mat-tab-group>
-  <mat-tab *ngFor="let category of categoriesList" [label]="category.attributes.title" />
-</mat-tab-group>
+<div class="px-5 md:px-10 mb-10" style="border-bottom: solid 1px rgba(0,0,0,.1);">
+  <mat-tab-group>
+    <mat-tab *ngFor="let category of categoriesList" [label]="category.attributes.title" />
+  </mat-tab-group>
 
-<div *ngIf="isLoading">
-  <categories-tabs-skeleton [repeat]="5" />
+  <div *ngIf="isLoading">
+    <categories-tabs-skeleton [repeat]="5" />
+  </div>
 </div>
