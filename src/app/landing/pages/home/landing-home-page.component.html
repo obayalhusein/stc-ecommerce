@@ -1,8 +1,8 @@
 <section class="py-10 px-5 md:px-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     <div class="flex flex-col justify-center">
-      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold uppercase text-gray-400 mb-5">Your <span class="text-primary">Gateway</span><span class="md:block md:mb-2"></span> to Endless <span class="text-primary">Choices</span></h1>
-      <p class="text-gray-500 uppercase">Discover Endless Possibilities and Unbeatable Deals for Every Need</p>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold uppercase text-gray-400 mb-3 md:mb-5">Your <span class="text-primary">Gateway</span><span class="md:block md:mb-2"></span> to Endless <span class="text-primary">Choices</span></h1>
+      <p class="text-gray-500 uppercase mb-5 md:mb-0">Discover Endless Possibilities and Unbeatable Deals for Every Need</p>
     </div>
     <div class="relative aspect-video">
       <img class="absolute w-full h-full object-contain" src="/assets/images/bg-store.png">
@@ -12,4 +12,9 @@
 
 <section>
   <products-grid-list [productsList]="productsList" [isLoading]="isLoading" />
+</section>
+
+<section class="bg-primary text-white text-center px-5 py-10">
+  <h2 class="text-3xl md:text-5xl uppercase mb-5">Register now and get a discount <b>20%</b> OFF</h2>
+  <button routerLink="/register" mat-flat-button class=" transform scale-110" style="min-width: 150px">Resgier</button>
 </section>
