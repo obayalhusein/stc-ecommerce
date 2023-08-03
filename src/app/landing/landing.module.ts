@@ -27,6 +27,7 @@ import { ProductCardItemSkeletonComponent } from './components/products/card-ite
 import { AuthErrorAlertComponent } from './components/auth/error-alert/auth-error-alert.component';
 import { CategoriesTabsComponent } from './components/categories/tabs/categories-tabs.component';
 import { CategoriesTabsSkeletonComponent } from './components/categories/tabs-skeleton/categories-tabs-skeleton.component';
+import { ProductShowCardSkeletonComponent } from './components/products/product-show-card-skeleton/product-show-card-skeleton.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { CategoriesTabsSkeletonComponent } from './components/categories/tabs-sk
     ProductCardItemSkeletonComponent,
     CategoriesTabsComponent,
     CategoriesTabsSkeletonComponent,
+    ProductShowCardSkeletonComponent,
   ],
   imports: [
     CommonModule,

@@ -13,6 +13,7 @@ export class LandingProductsShowPageComponent implements OnInit {
   isLoading: boolean = true;
   product: any = {};
   selectedPreviewImage: string = "";
+  productQuantity: number = 1;
 
   constructor(private _route: ActivatedRoute, private _publicProductsService: PublicProductsService) { }
   productId: number = 0;
@@ -41,6 +42,18 @@ export class LandingProductsShowPageComponent implements OnInit {
 
   selectPreviewImage(imageUrl: string) {
     this.selectedPreviewImage = imageUrl;
+  }
+
+  quantitydecrease() {
+    if(this.productQuantity > 1) {
+      this.productQuantity -= 1;
+    }
+  }
+
+  quantityIncrease() {
+    if(this.productQuantity < this.product.attributes.quantity) {
+      this.productQuantity += 1;
+    }
   }
 
 }

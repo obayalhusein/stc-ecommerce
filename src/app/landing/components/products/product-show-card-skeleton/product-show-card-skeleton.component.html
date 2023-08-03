@@ -1,0 +1,42 @@
+<section class="px-5">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div>
+      <div class="relative aspect-video mb-5">
+        <skeleton-loader type="video" />
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+        <div *ngFor="let loop of [1,2,3]" class="relative aspect-video border-solid border-2 border-gray-200 rounded overflow-hidden" role="button">
+          <skeleton-loader type="video" />
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 class="text-2xl md:text-4xl mb-3">
+        <skeleton-loader maxWidth="300px" />
+      </h1>
+      <p class="text-gray-500 mb-3 font-bold">
+        <skeleton-loader maxWidth="100px" />
+      </p>
+      <div class="text-gray=500 mb-3">
+        <div class="mb-1">
+          <skeleton-loader />
+        </div>
+        <skeleton-loader maxWidth="50%" />
+      </div>
+
+      <p class="text-xl md:text-4xl font-bold">
+        <skeleton-loader maxWidth="200px" />
+      </p>
+
+      <div class="flex items-center mt-8 mb-5">
+        <skeleton-loader type="button-fab" />
+
+        <skeleton-loader type="input" maxWidth="150px" />
+
+        <skeleton-loader type="button-fab" />
+      </div>
+
+      <skeleton-loader type="button" maxWidth="150px" />
+    </div>
+  </div>
+</section>
