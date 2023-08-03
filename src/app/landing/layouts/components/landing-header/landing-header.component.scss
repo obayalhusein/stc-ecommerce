@@ -1,19 +1,7 @@
-.header-title {
-  margin-left: 12px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-@media (max-width: 599px) {
-  .spacer {
-    display: none;
-  }
-
-  div[fxHide] {
-    display: none;
+::ng-deep {
+  .theme-light {
+    mat-toolbar.mat-toolbar {
+      background: transparent;
+    }
   }
 }

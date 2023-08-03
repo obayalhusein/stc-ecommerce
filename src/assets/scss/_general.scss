@@ -23,4 +23,9 @@ main {
 
 section {
   padding: 1rem 0;
+  &:first-child:before {
+    content: '';
+    display: block;
+    height: 64px; /* header navbar height */
+  }
 }
