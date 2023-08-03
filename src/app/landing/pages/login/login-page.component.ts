@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '@core/services/user.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginPageComponent implements OnInit {
   };
   errorMessage: string = "";
 
-  constructor(private _authService: AuthService, private _router: Router) { }
+  constructor(private _userService: UserService, private _authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
   }
@@ -23,11 +24,11 @@ export class LoginPageComponent implements OnInit {
   onSubmit(): void {
     this.isSubmitting = true;
 
-    this._authService.loginUser(this.formData).subscribe({
+    this._userService.loginUser(this.formData).subscribe({
       next: (result) => {
         const { jwt, user } = result;
           this._authService.setToken(jwt);
-          this._authService.setUser(user);
+          this._userService.setUser(user);
           if(user.isAdmin) {
             this._router.navigate(['/admin']);
           }

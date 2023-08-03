@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '@core/services/user.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -12,15 +13,15 @@ export class LandingHeaderComponent implements OnInit {
   drawerOpen: boolean = true;
   cartItemCount: number = 3;
 
-  constructor(private _authService: AuthService) { }
+  constructor(private _authService: AuthService, private _userService: UserService) { }
 
   ngOnInit() {
-    this.userInfo = this._authService.getUser();
-    this.isLoggedIn = this._authService.isLoggedIn();
+    this.userInfo = this._userService.getUser();
+    this.isLoggedIn = this._authService.hasToken();
   }
 
   logout() {
-    this._authService.logoutUser();
+    this._userService.logoutUser();
   }
 
 }

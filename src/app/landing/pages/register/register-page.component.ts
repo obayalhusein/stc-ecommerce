@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { UserService } from '@core/services/user.service';
 
 @Component({
   selector: 'app-register-page',
@@ -15,7 +15,7 @@ export class RegisterPageComponent implements OnInit {
   };
   errorMessage: string = "";
 
-  constructor(private _authService: AuthService) { }
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class RegisterPageComponent implements OnInit {
   onSubmit(): void {
     this.isSubmitting = true;
 
-    this._authService.registerUser(this.formData).subscribe({
+    this._userService.registerUser(this.formData).subscribe({
       next: (result) => {
         console.log(result);
       },

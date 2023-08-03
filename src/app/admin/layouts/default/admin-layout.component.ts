@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { UserService } from '@core/services/user.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -10,14 +10,14 @@ export class AdminLayoutComponent implements OnInit {
   userInfo: any = {};
   drawerOpen: boolean = true;
 
-  constructor(private _authService: AuthService) { }
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
-    this.userInfo = this._authService.getUser();
+    this.userInfo = this._userService.getUser();
   }
 
   logout() {
-    this._authService.logoutUser();
+    this._userService.logoutUser();
   }
 
 }
